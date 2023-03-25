@@ -40,7 +40,7 @@ Song "I Saw Her Standing There" is a rock music with the duration of 02:55 minut
 
 **ALBUM_DECLARATION**= "Album" , ALBUM_NAME, "has songs" , SONG_LIST, "and is of genre" , GENRE, "." ;
 
-**ALBUM_STATEMENT =** ALBUM_NAME, ****"is an album by", ****ARTIST_NAME**,** "released in", YEAR, ****"in the genre", ****GENRE**,** "including", ****SONG_LIST
+**ALBUM_STATEMENT =** ALBUM_NAME, "is an album by", ARTIST_NAME,** "released in", YEAR, "in the genre", GENRE, "including", SONG_LIST
 
 **ALBUM_LIST**= "[" , ALBUM_NAME, { "," , ALBUM_NAME} , "]" ;
 
@@ -52,7 +52,7 @@ Song "I Saw Her Standing There" is a rock music with the duration of 02:55 minut
 
 **FUNCTION_NAME** = STRING;
 
-**FUNCTION_DECLARATION** = "The" , function_name , “of”, "(" , argument_list , ")" , "is" , FUNCTION_BODY**, “**!**”**;
+**FUNCTION_DECLARATION** = "The" , function_name , “of”, "(" , argument_list , ")" , "is" , FUNCTION_BODY;
 
 **FUNCTION_BODY**= if_statement | for_loop | boolean_expression ;
 
