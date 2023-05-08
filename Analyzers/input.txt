@@ -1,0 +1,9 @@
+play
+the artist is the beatles
+the album is please please me
+with the songs: chains
+the genre is rock
+released in 1963
+released by parklophone
+in format LP
+pause

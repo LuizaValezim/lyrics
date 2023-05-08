@@ -1,0 +1,1786 @@
+Terminals unused in grammar
+
+    SONG
+    INCLUDING
+    AND
+    HAS
+    A
+    FROM
+    DIGIT
+    IDENTIFIER
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: PLAY statements PAUSE
+
+    2 statements: statement
+    3           | statements statement
+
+    4 statement: artist_statement
+    5          | album_statement
+    6          | songs_statement
+    7          | genre_statement
+    8          | duration_statement
+    9          | year_statement
+   10          | record_statement
+   11          | format_statement
+   12          | if_statement
+
+   13 artist_statement: THE ARTIST IS ARTIST_IDENTIFIER
+
+   14 album_statement: THE ALBUM IS ALBUM_IDENTIFIER
+
+   15 songs_statement: WITH THE SONGS COLON SONGS_IDENTIFIER
+
+   16 genre_statement: THE GENRE IS GENRE_IDENTIFIER
+
+   17 duration_statement: WITH DURATION OF DURATION_IDENTIFIER MINUTES
+
+   18 year_statement: RELEASED IN YEAR_IDENTIFIER
+
+   19 record_statement: RELEASED BY RECORD_IDENTIFIER
+
+   20 format_statement: IN FORMAT FORMAT_IDENTIFIER
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   22             | WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   23             | WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   24             | WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   25             | WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   26             | WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   27             | WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   28             | WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    ALBUM (258) 14 22
+    ARTIST (259) 13 21
+    SONG (260)
+    SONGS (261) 15 23
+    DURATION (262) 17 25
+    GENRE (263) 16 24
+    PLAY (264) 1
+    PAUSE (265) 1
+    RELEASED (266) 18 19 26
+    INCLUDING (267)
+    AND (268)
+    OF (269) 17
+    IN (270) 18 20 23
+    HAS (271)
+    IS (272) 13 14 16 21 22 23 24 25 26 27 28
+    A (273)
+    FROM (274)
+    THE (275) 13 14 15 16 21 22 23 24 25 26 27 28
+    WITH (276) 15 17
+    WHEN (277) 21 22 23 24 25 26 27 28
+    THEN (278) 21 22 23 24 25 26 27 28
+    BY (279) 19
+    ELSE (280) 21 22 23 24 25 26 27 28
+    MINUTES (281) 17
+    FORMAT (282) 20 28
+    YEAR (283) 26
+    RECORD (284) 27
+    ARTIST_IDENTIFIER (285) 13 21
+    ALBUM_IDENTIFIER (286) 14 22
+    SONGS_IDENTIFIER (287) 15 23
+    GENRE_IDENTIFIER (288) 16 24
+    DURATION_IDENTIFIER (289) 17 25
+    YEAR_IDENTIFIER (290) 18 26
+    RECORD_IDENTIFIER (291) 19 27
+    FORMAT_IDENTIFIER (292) 20 28
+    DIGIT (293)
+    IDENTIFIER (294)
+    LKEY (295) 21 22 23 24 25 26 27 28
+    RKEY (296) 21 22 23 24 25 26 27 28
+    COLON (297) 15
+    COMMA (298) 21 22 23 24 25 26 27 28
+
+
+Nonterminals, with rules where they appear
+
+    $accept (44)
+        on left: 0
+    program (45)
+        on left: 1
+        on right: 0
+    statements (46)
+        on left: 2 3
+        on right: 1 3 21 22 23 24 25 26 27 28
+    statement (47)
+        on left: 4 5 6 7 8 9 10 11 12
+        on right: 2 3
+    artist_statement (48)
+        on left: 13
+        on right: 4
+    album_statement (49)
+        on left: 14
+        on right: 5
+    songs_statement (50)
+        on left: 15
+        on right: 6
+    genre_statement (51)
+        on left: 16
+        on right: 7
+    duration_statement (52)
+        on left: 17
+        on right: 8
+    year_statement (53)
+        on left: 18
+        on right: 9
+    record_statement (54)
+        on left: 19
+        on right: 10
+    format_statement (55)
+        on left: 20
+        on right: 11
+    if_statement (56)
+        on left: 21 22 23 24 25 26 27 28
+        on right: 12
+
+
+State 0
+
+    0 $accept: • program $end
+
+    PLAY  shift, and go to state 1
+
+    program  go to state 2
+
+
+State 1
+
+    1 program: PLAY • statements PAUSE
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 8
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 2
+
+    0 $accept: program • $end
+
+    $end  shift, and go to state 19
+
+
+State 3
+
+   18 year_statement: RELEASED • IN YEAR_IDENTIFIER
+   19 record_statement: RELEASED • BY RECORD_IDENTIFIER
+
+    IN  shift, and go to state 20
+    BY  shift, and go to state 21
+
+
+State 4
+
+   20 format_statement: IN • FORMAT FORMAT_IDENTIFIER
+
+    FORMAT  shift, and go to state 22
+
+
+State 5
+
+   13 artist_statement: THE • ARTIST IS ARTIST_IDENTIFIER
+   14 album_statement: THE • ALBUM IS ALBUM_IDENTIFIER
+   16 genre_statement: THE • GENRE IS GENRE_IDENTIFIER
+
+    ALBUM   shift, and go to state 23
+    ARTIST  shift, and go to state 24
+    GENRE   shift, and go to state 25
+
+
+State 6
+
+   15 songs_statement: WITH • THE SONGS COLON SONGS_IDENTIFIER
+   17 duration_statement: WITH • DURATION OF DURATION_IDENTIFIER MINUTES
+
+    DURATION  shift, and go to state 26
+    THE       shift, and go to state 27
+
+
+State 7
+
+   21 if_statement: WHEN • ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   22             | WHEN • ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   23             | WHEN • SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   24             | WHEN • GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   25             | WHEN • DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   26             | WHEN • YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   27             | WHEN • RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+   28             | WHEN • FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    ARTIST_IDENTIFIER    shift, and go to state 28
+    ALBUM_IDENTIFIER     shift, and go to state 29
+    SONGS_IDENTIFIER     shift, and go to state 30
+    GENRE_IDENTIFIER     shift, and go to state 31
+    DURATION_IDENTIFIER  shift, and go to state 32
+    YEAR_IDENTIFIER      shift, and go to state 33
+    RECORD_IDENTIFIER    shift, and go to state 34
+    FORMAT_IDENTIFIER    shift, and go to state 35
+
+
+State 8
+
+    1 program: PLAY statements • PAUSE
+    3 statements: statements • statement
+
+    PAUSE     shift, and go to state 36
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 9
+
+    2 statements: statement •
+
+    $default  reduce using rule 2 (statements)
+
+
+State 10
+
+    4 statement: artist_statement •
+
+    $default  reduce using rule 4 (statement)
+
+
+State 11
+
+    5 statement: album_statement •
+
+    $default  reduce using rule 5 (statement)
+
+
+State 12
+
+    6 statement: songs_statement •
+
+    $default  reduce using rule 6 (statement)
+
+
+State 13
+
+    7 statement: genre_statement •
+
+    $default  reduce using rule 7 (statement)
+
+
+State 14
+
+    8 statement: duration_statement •
+
+    $default  reduce using rule 8 (statement)
+
+
+State 15
+
+    9 statement: year_statement •
+
+    $default  reduce using rule 9 (statement)
+
+
+State 16
+
+   10 statement: record_statement •
+
+    $default  reduce using rule 10 (statement)
+
+
+State 17
+
+   11 statement: format_statement •
+
+    $default  reduce using rule 11 (statement)
+
+
+State 18
+
+   12 statement: if_statement •
+
+    $default  reduce using rule 12 (statement)
+
+
+State 19
+
+    0 $accept: program $end •
+
+    $default  accept
+
+
+State 20
+
+   18 year_statement: RELEASED IN • YEAR_IDENTIFIER
+
+    YEAR_IDENTIFIER  shift, and go to state 38
+
+
+State 21
+
+   19 record_statement: RELEASED BY • RECORD_IDENTIFIER
+
+    RECORD_IDENTIFIER  shift, and go to state 39
+
+
+State 22
+
+   20 format_statement: IN FORMAT • FORMAT_IDENTIFIER
+
+    FORMAT_IDENTIFIER  shift, and go to state 40
+
+
+State 23
+
+   14 album_statement: THE ALBUM • IS ALBUM_IDENTIFIER
+
+    IS  shift, and go to state 41
+
+
+State 24
+
+   13 artist_statement: THE ARTIST • IS ARTIST_IDENTIFIER
+
+    IS  shift, and go to state 42
+
+
+State 25
+
+   16 genre_statement: THE GENRE • IS GENRE_IDENTIFIER
+
+    IS  shift, and go to state 43
+
+
+State 26
+
+   17 duration_statement: WITH DURATION • OF DURATION_IDENTIFIER MINUTES
+
+    OF  shift, and go to state 44
+
+
+State 27
+
+   15 songs_statement: WITH THE • SONGS COLON SONGS_IDENTIFIER
+
+    SONGS  shift, and go to state 45
+
+
+State 28
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER • IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 46
+
+
+State 29
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER • IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 47
+
+
+State 30
+
+   23 if_statement: WHEN SONGS_IDENTIFIER • IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 48
+
+
+State 31
+
+   24 if_statement: WHEN GENRE_IDENTIFIER • IS THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 49
+
+
+State 32
+
+   25 if_statement: WHEN DURATION_IDENTIFIER • IS THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 50
+
+
+State 33
+
+   26 if_statement: WHEN YEAR_IDENTIFIER • IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 51
+
+
+State 34
+
+   27 if_statement: WHEN RECORD_IDENTIFIER • IS THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 52
+
+
+State 35
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER • IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IS  shift, and go to state 53
+
+
+State 36
+
+    1 program: PLAY statements PAUSE •
+
+    $default  reduce using rule 1 (program)
+
+
+State 37
+
+    3 statements: statements statement •
+
+    $default  reduce using rule 3 (statements)
+
+
+State 38
+
+   18 year_statement: RELEASED IN YEAR_IDENTIFIER •
+
+    $default  reduce using rule 18 (year_statement)
+
+
+State 39
+
+   19 record_statement: RELEASED BY RECORD_IDENTIFIER •
+
+    $default  reduce using rule 19 (record_statement)
+
+
+State 40
+
+   20 format_statement: IN FORMAT FORMAT_IDENTIFIER •
+
+    $default  reduce using rule 20 (format_statement)
+
+
+State 41
+
+   14 album_statement: THE ALBUM IS • ALBUM_IDENTIFIER
+
+    ALBUM_IDENTIFIER  shift, and go to state 54
+
+
+State 42
+
+   13 artist_statement: THE ARTIST IS • ARTIST_IDENTIFIER
+
+    ARTIST_IDENTIFIER  shift, and go to state 55
+
+
+State 43
+
+   16 genre_statement: THE GENRE IS • GENRE_IDENTIFIER
+
+    GENRE_IDENTIFIER  shift, and go to state 56
+
+
+State 44
+
+   17 duration_statement: WITH DURATION OF • DURATION_IDENTIFIER MINUTES
+
+    DURATION_IDENTIFIER  shift, and go to state 57
+
+
+State 45
+
+   15 songs_statement: WITH THE SONGS • COLON SONGS_IDENTIFIER
+
+    COLON  shift, and go to state 58
+
+
+State 46
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS • THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 59
+
+
+State 47
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS • THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 60
+
+
+State 48
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS • IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    IN  shift, and go to state 61
+
+
+State 49
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS • THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 62
+
+
+State 50
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS • THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 63
+
+
+State 51
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS • THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 64
+
+
+State 52
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS • THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 65
+
+
+State 53
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS • THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 66
+
+
+State 54
+
+   14 album_statement: THE ALBUM IS ALBUM_IDENTIFIER •
+
+    $default  reduce using rule 14 (album_statement)
+
+
+State 55
+
+   13 artist_statement: THE ARTIST IS ARTIST_IDENTIFIER •
+
+    $default  reduce using rule 13 (artist_statement)
+
+
+State 56
+
+   16 genre_statement: THE GENRE IS GENRE_IDENTIFIER •
+
+    $default  reduce using rule 16 (genre_statement)
+
+
+State 57
+
+   17 duration_statement: WITH DURATION OF DURATION_IDENTIFIER • MINUTES
+
+    MINUTES  shift, and go to state 67
+
+
+State 58
+
+   15 songs_statement: WITH THE SONGS COLON • SONGS_IDENTIFIER
+
+    SONGS_IDENTIFIER  shift, and go to state 68
+
+
+State 59
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE • ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    ARTIST  shift, and go to state 69
+
+
+State 60
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE • ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    ALBUM  shift, and go to state 70
+
+
+State 61
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN • THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THE  shift, and go to state 71
+
+
+State 62
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE • GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    GENRE  shift, and go to state 72
+
+
+State 63
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE • DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    DURATION  shift, and go to state 73
+
+
+State 64
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE • RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 74
+
+
+State 65
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE • RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    RECORD  shift, and go to state 75
+
+
+State 66
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE • FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    FORMAT  shift, and go to state 76
+
+
+State 67
+
+   17 duration_statement: WITH DURATION OF DURATION_IDENTIFIER MINUTES •
+
+    $default  reduce using rule 17 (duration_statement)
+
+
+State 68
+
+   15 songs_statement: WITH THE SONGS COLON SONGS_IDENTIFIER •
+
+    $default  reduce using rule 15 (songs_statement)
+
+
+State 69
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 77
+
+
+State 70
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 78
+
+
+State 71
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE • SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    SONGS  shift, and go to state 79
+
+
+State 72
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 80
+
+
+State 73
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 81
+
+
+State 74
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED • YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    YEAR  shift, and go to state 82
+
+
+State 75
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 83
+
+
+State 76
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 84
+
+
+State 77
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 85
+
+
+State 78
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 86
+
+
+State 79
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 87
+
+
+State 80
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 88
+
+
+State 81
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 89
+
+
+State 82
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR • COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    COMMA  shift, and go to state 90
+
+
+State 83
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 91
+
+
+State 84
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 92
+
+
+State 85
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 93
+
+
+State 86
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 94
+
+
+State 87
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 95
+
+
+State 88
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 96
+
+
+State 89
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 97
+
+
+State 90
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA • THEN LKEY statements RKEY ELSE LKEY statements RKEY
+
+    THEN  shift, and go to state 98
+
+
+State 91
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 99
+
+
+State 92
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 100
+
+
+State 93
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 101
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 94
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 102
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 95
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 103
+
+
+State 96
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 104
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 97
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 105
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 98
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN • LKEY statements RKEY ELSE LKEY statements RKEY
+
+    LKEY  shift, and go to state 106
+
+
+State 99
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 107
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 100
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 108
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 101
+
+    3 statements: statements • statement
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 109
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 102
+
+    3 statements: statements • statement
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 110
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 103
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 111
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 104
+
+    3 statements: statements • statement
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 112
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 105
+
+    3 statements: statements • statement
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 113
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 106
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY • statements RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 114
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 107
+
+    3 statements: statements • statement
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 115
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 108
+
+    3 statements: statements • statement
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 116
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 109
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 117
+
+
+State 110
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 118
+
+
+State 111
+
+    3 statements: statements • statement
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 119
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 112
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 120
+
+
+State 113
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 121
+
+
+State 114
+
+    3 statements: statements • statement
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements • RKEY ELSE LKEY statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 122
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 115
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 123
+
+
+State 116
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 124
+
+
+State 117
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 125
+
+
+State 118
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 126
+
+
+State 119
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 127
+
+
+State 120
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 128
+
+
+State 121
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 129
+
+
+State 122
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY • ELSE LKEY statements RKEY
+
+    ELSE  shift, and go to state 130
+
+
+State 123
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 131
+
+
+State 124
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 132
+
+
+State 125
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 133
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 126
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 134
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 127
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 135
+
+
+State 128
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 136
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 129
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 137
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 130
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE • LKEY statements RKEY
+
+    LKEY  shift, and go to state 138
+
+
+State 131
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 139
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 132
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 140
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 133
+
+    3 statements: statements • statement
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 141
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 134
+
+    3 statements: statements • statement
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 142
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 135
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 143
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 136
+
+    3 statements: statements • statement
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 144
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 137
+
+    3 statements: statements • statement
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 145
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 138
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY • statements RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+
+    statements          go to state 146
+    statement           go to state 9
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 139
+
+    3 statements: statements • statement
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 147
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 140
+
+    3 statements: statements • statement
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 148
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 141
+
+   21 if_statement: WHEN ARTIST_IDENTIFIER IS THE ARTIST COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 21 (if_statement)
+
+
+State 142
+
+   22 if_statement: WHEN ALBUM_IDENTIFIER IS THE ALBUM COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 22 (if_statement)
+
+
+State 143
+
+    3 statements: statements • statement
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 149
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 144
+
+   24 if_statement: WHEN GENRE_IDENTIFIER IS THE GENRE COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 24 (if_statement)
+
+
+State 145
+
+   25 if_statement: WHEN DURATION_IDENTIFIER IS THE DURATION COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 25 (if_statement)
+
+
+State 146
+
+    3 statements: statements • statement
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements • RKEY
+
+    RELEASED  shift, and go to state 3
+    IN        shift, and go to state 4
+    THE       shift, and go to state 5
+    WITH      shift, and go to state 6
+    WHEN      shift, and go to state 7
+    RKEY      shift, and go to state 150
+
+    statement           go to state 37
+    artist_statement    go to state 10
+    album_statement     go to state 11
+    songs_statement     go to state 12
+    genre_statement     go to state 13
+    duration_statement  go to state 14
+    year_statement      go to state 15
+    record_statement    go to state 16
+    format_statement    go to state 17
+    if_statement        go to state 18
+
+
+State 147
+
+   27 if_statement: WHEN RECORD_IDENTIFIER IS THE RECORD COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 27 (if_statement)
+
+
+State 148
+
+   28 if_statement: WHEN FORMAT_IDENTIFIER IS THE FORMAT COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 28 (if_statement)
+
+
+State 149
+
+   23 if_statement: WHEN SONGS_IDENTIFIER IS IN THE SONGS COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 23 (if_statement)
+
+
+State 150
+
+   26 if_statement: WHEN YEAR_IDENTIFIER IS THE RELEASED YEAR COMMA THEN LKEY statements RKEY ELSE LKEY statements RKEY •
+
+    $default  reduce using rule 26 (if_statement)
