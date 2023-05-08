@@ -72,3 +72,15 @@ pause
 **CHARACTERS** =  a | ... | z | A | ... | Z ;
 
 **DIGIT** = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 ;
+
+## Lexic and Syntactic Analyzers
+
+How to run it:
+```
+bison -dv lyric.y
+flex -l lexic.l
+gcc -o flex_analyzer lyric.yy.c -lfl
+gcc -o bison_analyzer lyric.tab.c lyric.yy.c -lfl
+./flex_analyzer < input.txt
+./bison_analyzer < input.txt
+```
