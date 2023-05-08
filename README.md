@@ -78,7 +78,7 @@ pause
 How to run it:
 ```
 bison -dv lyric.y
-flex -l lexic.l
+flex -l lyric.l
 gcc -o flex_analyzer lyric.yy.c -lfl
 gcc -o bison_analyzer lyric.tab.c lyric.yy.c -lfl
 ./flex_analyzer < input.txt
