@@ -4,23 +4,16 @@ This repository I'll be posting the development of my programming language.
 An example would be:
 
 ```
-The Beatles has released ["Please Please Me", "With The Beatles"].
-
-Album "Please Please Me" has songs ["I Saw Her Standing There", "Love Me Do", "Please Please Me"] and is of genre rock, released in 1963 including ["Twist and Shout", "Do You Want to Know a Secret"].
-Album "With The Beatles" has songs ["It Won't Be Long", "All I've Got to Do", "All My Loving"] and is of genre rock, released in 1963 including ["I Wanna Be Your Man", "Money"].
-
-Song "Twist and Shout" is a rock music with the duration of 02:33 minutes from "Please Please Me".
-Song "Do You Want to Know a Secret" is a rock music with the duration of 01:57 minutes from "Please Please Me".
-Song "I Wanna Be Your Man" is a rock music with the duration of 01:59 minutes from "With The Beatles".
-Song "Money" is a rock music with the duration of 02:49 minutes from "With The Beatles".
-
-The song with the shortest duration in "Please Please Me" is "Do You Want to Know a Secret".
-The album with the longest total duration is "With The Beatles".
-
-when "I Wanna Be Your Man" in "With The Beatles":
-  Beatles_song = "I Saw Her Standing There"
-
-Song "I Saw Her Standing There" is a rock music with the duration of 02:55 minutes from "Please Please Me".
+play
+the artist is the beatles
+the album is please please me
+with the songs: chains
+the genre is rock
+with duration of 31:59 minutes
+released in 1963
+released by parklophone
+in format LP
+pause
 ```
 
 
