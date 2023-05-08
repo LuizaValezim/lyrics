@@ -79,8 +79,8 @@ How to run it:
 ```
 bison -dv lyric.y
 flex -l lyric.l
-gcc -o flex_analyzer lyric.yy.c -lfl
-gcc -o bison_analyzer lyric.tab.c lyric.yy.c -lfl
+gcc -o flex_analyzer lex.yy.c -lfl
+gcc -o bison_analyzer lyric.tab.c lex.yy.c -lfl
 ./flex_analyzer < input.txt
 ./bison_analyzer < input.txt
 ```
