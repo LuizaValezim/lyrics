@@ -1,6 +1,6 @@
 import sys
 
-reserved_word=['print', 'while', 'if', 'else', 'def', 'use']
+reserved_word=['print', 'while', 'if', 'else', 'def', 'use', 'play', 'pause']
 
 class PrePo:
 
