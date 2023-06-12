@@ -4,16 +4,38 @@ This repository I'll be posting the development of my programming language.
 An example would be:
 
 ```
-play
-the artist is the beatles
-the album is please please me
-with the songs: chains
-the genre is rock
-with duration of 31:59 minutes
-released in 1963
-released by parklophone
-in format LP
-pause
+beatles = "The Beatles"
+number_of_albuns_beatles = 12
+debuted_beatles = 1960
+
+beyonce = "Beyonce"
+number_of_albuns_beyonce = 7
+debuted_beyonce = 1997
+
+def numberOfDifferentAlbuns(albuns1, albuns2) {
+
+    difference = albuns1 - albuns2
+
+    if (difference > 0) {
+        print("The first artist has " + difference + " albuns more than the second")
+    }
+    if (difference < 0) {
+        difference = difference + 2*difference
+        print("The second artist has " + difference + " albuns more than the first")
+    }
+}
+
+differenceNumbers = 0
+differenceYears = debuted_beyonce - debuted_beatles
+
+while (differenceYears > 0) {
+    differenceYears = differenceYears - 1
+    differenceNumbers = differenceNumbers + 1
+}
+
+use numberOfDifferentAlbuns(number_of_albuns_beatles, number_of_albuns_beyonce)
+
+print("Beyonce debuted " + differenceNumbers + " after The Beatles.")
 ```
 
 
@@ -84,3 +106,12 @@ gcc -o bison_analyzer lyric.tab.c lex.yy.c -lfl
 ./flex_analyzer < input.txt
 ./bison_analyzer < input.txt
 ```
+
+## Compiling the code
+
+```
+python main.py example.txt
+```
+
+Resultado: 
+
