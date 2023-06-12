@@ -114,4 +114,4 @@ python main.py example.txt
 ```
 
 Resultado: 
-
+![image](https://github.com/LuizaValezim/lyrics/assets/62949391/6b4bd839-2701-454a-a936-aeab08574bb9)
